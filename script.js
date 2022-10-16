@@ -1,13 +1,11 @@
 const h2 = document.querySelector("h2");
 const form = document.querySelector("form");
-const input = document.querySelector("input");
+const categoryInput = document.querySelector("input");
 const button = document.querySelector("button");
 const div = document.querySelector(".absalute");
-const input1 =document.querySelector(".limit")
+const limitInput = document.querySelector(".limit");
 
-const limit = 3;
-
-const createQuestionsApp = (category) => {
+const createQuestionsApp = (category, limit) => {
   const promise = fetch(
     `https://quizapi.io/api/v1/questions?apiKey=XEtdSWA2te2Uj1Isz2vMQLqC8ScgrSgRxUd3Gvi8&limit=${limit}&category=${category}`
   );
@@ -86,15 +84,15 @@ const createQuestionsApp = (category) => {
 };
 
 button.addEventListener("click", () => {
-  createQuestionsApp(input.value);
-  div.style.display = "block";
-  if(currentQuestionIndex >= 0) {
-    
+  const limit = Number(limitInput.value);
+
+  if (!limit || limit < 1) {
+    alert("Invalid limit");
+
+    return;
   }
-  
+
+  createQuestionsApp(categoryInput.value, limit);
+
+  div.style.display = "block";
 });
-
-
-
-
-
