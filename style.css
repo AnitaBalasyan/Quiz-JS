@@ -1,0 +1,33 @@
+body {
+   background-color: #66CBFF;
+  
+}
+
+div.absalute {
+ position:absolute;
+ top: 120px;
+ left: 160px;
+ }
+
+div.relative {
+   height: 300px;
+   width: 900px;
+   background-color: #B4E6FD;
+   position: relative;
+  
+}
+
+
+h1 {
+   text-align: center;
+   color: #2D4096;
+}
+h2 {
+   color: white;
+   border-radius: 50px;
+   background-color: #2D4096;
+   padding: 7px;
+}
+
+
+
